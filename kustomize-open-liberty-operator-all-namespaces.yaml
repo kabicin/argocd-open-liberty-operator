@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: open-liberty-operator
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    path: deploy/releases/1.4.3/kustomize/overlays/watch-all-namespaces
+    repoURL: 'https://github.com/OpenLiberty/open-liberty-operator'
+    targetRevision: HEAD
+  destination:
+    namespace: open-liberty
+    server: 'https://kubernetes.default.svc'
+  ignoreDifferences:
+  - group: ''
+    kind: ConfigMap
+    name: open-liberty-operator
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

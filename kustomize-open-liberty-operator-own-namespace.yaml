@@ -18,4 +18,5 @@ spec:
     name: open-liberty-operator
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+    - ServerSideApply=true
+    - CreateNamespace=true

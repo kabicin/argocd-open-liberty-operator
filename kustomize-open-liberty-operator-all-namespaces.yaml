@@ -53,7 +53,7 @@ spec:
     repoURL: 'https://github.com/OpenLiberty/open-liberty-operator'
     targetRevision: HEAD
     kustomize:
-      namespace: openshift-operators
+      namespace: open-liberty
   destination:
     server: 'https://kubernetes.default.svc'
   ignoreDifferences:

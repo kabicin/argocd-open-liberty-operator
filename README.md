@@ -2,7 +2,7 @@
 
 ## How to deploy Open Liberty Operator with an ArgoCD Application
 1. Install the OpenShift GitOps operator in OpenShift UI into the `openshift-gitops` namespace.
-2. Grant permissions for the GitOps operator to view across the cluster. In this example, access is required to create the `open-liberty` namespace.
+2. Grant cluster-admin permissions for the GitOps operator to be able to create CRDs for Open Liberty Operator.
 ```
 oc adm policy add-cluster-role-to-user cluster-admin  system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller -n openshift-gitops
 ```
